@@ -1,0 +1,101 @@
+
+<head>
+<title>Enroll</title>
+
+</head>
+
+<body bgcolor="#f0f8ff">
+
+  <style type="text/css">
+
+#bodycontent label { padding-right:25px }
+#bodycontent label { color: navy}
+    #bodycontent input { width: 500px}
+    #bodycontent input { height: 25px}
+    #bodycontent input {color: blue}
+        #bodycontent select { width: 500px}
+    #bodycontent select { height: 25px}
+    #bodycontent select {color: #DDECEE}
+    #bodycontent button {color: blue}
+    #bodycontent button {border-color: rebeccapurple}
+    #bodycontent button {background-color: #E6E6FA}
+</style>
+
+
+     <center><h1><font color="#483d8b">Create request to enroll into FL Channel </font></h1> </center>
+
+            <br>
+                <br>
+
+      <hr>
+            <br>
+                <br>
+
+
+
+        <div id="bodycontent">
+      <form action="/enroll" method="POST">
+
+
+          <label>Client-Name</label>
+          <input type="text" id="username" name="userId" placeholder="Enter FL Client Name">
+          <br>
+                <br>
+
+        <br>
+                  <label>FL Channel</label>
+
+          <select id="FL-Channel-Name"  name="FL-Channel-Name"  placeholder="Enter FL Channel">
+  <option value="cifar">Cifar image classification</option>
+  <option value="emnist">Emnist Image classification</option>
+     <option value="medicalimages">Medical Image classification </option>
+  <option value="Textclassification"> Author Identification</option>
+</select>
+        <br>
+                <br>
+
+        <br>
+        <hr> <h3><font color="#483d8b">Connection Parameters</font></h3>
+
+                          <label>Hostname</label>
+          <input type="text" class="form-control" id="Hostname" name="Hostname" placeholder="Enter Hostname">
+          <br>
+                <br>
+
+        <br>
+                                  <label>WS port</label>
+          <input type="text" class="form-control" id="WS-port" name="ws-port" placeholder="Enter WS-port">
+          <br>
+                <br>
+
+        <br>
+
+
+        <button type="submit" class="btn btn-primary">Submit Enrollment Form</button>
+
+      </form>
+
+{% if feedback %}
+<p class="text-danger float-right">{{ feedback }}</p>
+{% endif %}
+{% block script %}
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    function addSubmit(ev) {
+      ev.preventDefault();
+      $.ajax({
+        method: 'POST',
+        url: {{ url_for('enroll')|tojson }},
+        data: $(this).serialize()
+      }).done(addShow);
+    }
+
+    function addShow(data) {
+      $('#result').text(data.result);
+
+    }
+
+    $('#calc').on('submit', addSubmit);
+  </script>
+{% endblock %}
+</body>
