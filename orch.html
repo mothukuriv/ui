@@ -3,72 +3,77 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link href="style.css" rel="stylesheet">
+<link href="Fixed_Nav.css" rel="stylesheet">
 <style>
 body {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: sans-serif;
 }
 
 .sidebar {
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  background-color:navy;
   position: fixed;
   height: 100%;
-  overflow: auto;
+  overflow:auto;
 }
 
 .sidebar a {
   display: block;
-  color: black;
-  padding: 16px;
+  color: white;
+  padding: 10px;
   text-decoration: none;
+  font-size: 12pt;
+  background-color:navy;
 }
 
-.sidebar a.active {
-  background-color:darkblue;
-  color: white;
+
+.sidebar :hover {
+  background-color:grey;
+  color:white;
+  font-size: 12pt;
 }
 
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
+
 
 div.content {
   margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
+  padding: 1px 1px;
+  height: 10000px;
 }
 
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
 
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
 
 </style>
 
 </head>
+<nav class="navbar navbar-expand-md navbar-light fixed-nav-bar">
+  <a  href="Home"><i class="fa fa-arrow-left fa-2x"></i> <i class="fa fa-fw fa-home fa-2x "></i> </a> 
+  <div id="animated-gif-container">
+    <div class="container-fluid" >
+  
+      <h1 style="color: white;max-height:300%; font-size: 25pt; font-style:arial;align-content: center;"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+         Orchestration</h1>
 
+    
+    </div>
+  </div>
+  </nav>
+  
 
     <div class="sidebar">
+     <br> <br> <br>
   <a class="active"  href="#Enrlu">Enrolled Users</a>
-  <a href="#Userstat">User Stats</a>
+  <a href="#Ustat">User Stats</a>
   <a href="#Global">Global FL Stats</a>
+  
 </div>
+
         <div class="content"id="Enrlu">
             <center>
                 <br>
@@ -105,14 +110,20 @@ div.content {
 </table>
             </center>
         </div>
-<div class="content"  id="Global">
-    global
-</div>
-      <div  class="content" id="Userstat">
-
- helllo
-
-        </div>
-</div>
+        <h2 style="background-color: lightskyblue;">
+        <div class="content"id="Ustat" >
+          <br><br><br>
+          <h1>heloooooo</h1>
+              </h2>
+      </div>
+    </div>
+    <h2 style="background-color: lightslategray;">
+    <div class="content"id="Global">
+   
+  
+      <br><br><br>
+      <h1>GLobal Stats</h1>
+  </h2>   
+  </div>
 </head>
 </html>
