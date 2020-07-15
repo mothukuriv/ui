@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  background-color:darkblue;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+</style>
+
+</head>
+
+
+    <div class="sidebar">
+  <a class="active"  href="#Enrlu">Enrolled Users</a>
+  <a href="#Userstat">User Stats</a>
+  <a href="#Global">Global FL Stats</a>
+</div>
+        <div class="content"id="Enrlu">
+            <center>
+                <br>
+                <br>
+                <br>
+<TABLE border="1" cellpadding="5" cellspacing="2" >
+  <TR>
+    <TH colspan="5" scope="colgroup">EnrolledUsers</TH>
+  </TR>
+  <TR>
+    <TH scope="col" abbr="Name">User Id</TH>
+    <TH scope="col" abbr="Tutor">FL Channel</TH>
+    <TH scope="col">Hostname</TH>
+    <TH scope="col">Port</TH>
+  </TR>
+
+            {% for temp in res %}
+
+            {% for k, v in temp.items() %}
+            {% if k == 'Record' %}
+    <tr>
+            {% for k1, v1 in v.items() %}
+
+   <td>    &nbsp;  &nbsp;   {{v1}} &nbsp;  &nbsp; </td>
+
+
+                        {% endfor %}
+</tr>
+             {% endif %}
+            {% endfor %}
+
+
+    {% endfor %}
+</table>
+            </center>
+        </div>
+<div class="content"  id="Global">
+    global
+</div>
+      <div  class="content" id="Userstat">
+
+ helllo
+
+        </div>
+</div>
+</head>
+</html>
