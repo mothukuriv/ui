@@ -1,11 +1,25 @@
-<!doctype html>
-<title xmlns="http://www.w3.org/1999/html">FabricFL</title>
+<!DOCTYPE html>
+<html lang="en">
 
-     <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/Fixed_Nav.css') }}">
+	     <link rel="stylesheet" href="{{ url_for('static', filename='css/Register.css') }}">
+
+
+<!-- Bokeh includes-->
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css" type="text/css" />
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
+
+
 <style>
 
      body {
-    background-color: lightsteelblue;
 margin: 0;
 padding: 0;
 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -35,7 +49,6 @@ input[type='checkbox'] {
   padding: 1rem;
 
   color: #A77B0E;
-  background: #FAE042;
 
   cursor: pointer;
 
@@ -81,33 +94,305 @@ input[type='checkbox'] {
 }
 
 .collapsible-content .content-inner {
-  background: rgba(250, 224, 66, .2);
-  border-bottom: 1px solid rgba(250, 224, 66, .45);
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   padding: .5rem 1rem;
 }
 
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar a {
+  float: right;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.bg {
+  background-image: url("static/images/mac.png");
+   height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+width: 100%;
+}
 </style>
-<head>
+<style>
+	.register {
+  background-color: grey;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
 
-<title> Fabricfl </title>
+.register:hover {
+  opacity: 1;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.column img {
+  margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+
 </head>
-<body>
- <center><h1> FabricFL</h1> </center>
 
-<div class="wrap-collabsible">
-  <input id="collapsible2" class="toggle" type="checkbox">
-  <label for="collapsible2" class="lbl-toggle">Enroll into FL</label>
-  <div class="collapsible-content">
-    <div class="content-inner">
-      <p>
-           Cifar
+
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light fixed-nav-bar">
+<div id="animated-gif-container">
+	<div class="container-fluid" >
+		<div class="collapse navbar-collapse" id="navbarResponsive" >
+		<font color="#FFFFF" size="5">
+
+			Blockchain-in-the-Loop with FL
+		</font>
+
+		 &nbsp;&nbsp; 	 &nbsp;&nbsp;
+					<a class="navbar"  href="#Home"><i class="fa fa-fw fa-home "></i> Home</a>
+				 &nbsp;&nbsp;
+					<a class="navbar" href="#Enrol"><i class="fa fa-pencil-square-o " ></i> Enrollment</a>
+				 &nbsp;&nbsp;
+					<a class="navbar" href="#Orch"><i class="fa fa-cubes" aria-hidden="true"></i>  Orchestration</a>
+				 &nbsp;&nbsp;
+			<a class="navbar" href="#Results"><i class="fa fa-check-circle" aria-hidden="true"></i>  Results</a>
+		<br>
+			<br>
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+</div>
+
+</nav>
+
+<div id="Home">
+	<font color="white">
+<div style="background-image : url('static/images/bg_ui.png') " >
+<div class="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12">
+			<h1 class="display-4"> </h1>
+					<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+<br>
+		  <a href="productowner" target="_blank">
+<input type="button" class="button" value="Product Owners Click Here" />
+</a>
+
+<br><br><br><br>
+		  <a href="client" target="_blank">
+<input type="button" class="button" value="     Clients Click Here         " />
+</a>
+
            <br>
-           <br>
-  <a href="{{ url_for('index', js='enroll') }}">Enroll</a>
-      </p>
-    </div>
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+		<br>
+		</div>
+	</div>
+	</font>
+</div>
+
+		<div class="container-fluid padding">
+	<div class="row padding">
+		<!--div class="col-md-4"-->
+			<div class="card">
+<div style="background-image: url('static/images/b.jpg') ">
+				<div class="card-body">
+					<h4 class="card-title">Architecture</h4>
+					<p class="card-text">
+					<!--a href="#" class="btn btn-outline-secondary"></a-->
+							<img src="static/images/FL_Hlf-3.png" class="center">
+				</div>
+			</div>
+		</div>
+		<!--div class="col-md-4"-->
+
+		</div>
+		</div>
+
+
+
+	<div  id="Enrol">
+
+		<div style="background-image: url('static/images/bg_ui.png') " >
+			<div class="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12" >
+
+			<h3>		<center>
+						  <a href="{{ url_for('index', js='enroll') }}" target="_blank">Click here Enroll into FL</a>
+</center>	</h3>
+
+			 <a href="{{ url_for('index', js='queryAll') }}" target="_blank">Query All</a>
+<br><br><br><br><br><br><br><br>
+			 <a href="{{ url_for('index', js='stats') }}" target="_blank">stats</a>
+<br><br><br><br><br><br><br><br>
+		</div>
+		</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+<!--div class="container-fluid padding">
+	<div class="row padding">
+		<div class="col-md-4">
+			<div class="card">
+
+				<div class="card-body">
+					<h4 class="card-title">1</h4>
+					<p class="card-text">
+					<a href="#" class="btn btn-outline-secondary"></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+		<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+		<br>
+				<div class="card-body">
+					<h4 class="card-title">2</h4>
+					<p class="card-text"> </p>
+					<a href="#" class="btn btn-outline-secondary"></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+
+				<div class="card-body">
+					<h4 class="card-title">3</h4>
+					<p class="card-text"> </p>
+					<a href="#" class="btn btn-outline-secondary"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<Two Column Section -->
+<div id="Results">
+	<div style="background-image : url('static/images/bg_ui.png') " >
+<div class="container-fluid padding">
+	<div class="row padding">
+		<div class="col-md-12 col-lg-6">
+			<h2>Results</h2>
+				<div class="card-deck">
+
+					 <div class="card-columns">
+
+		<img src="../static/images/summary_clean_accuracy.png"height="300" width="300" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  	<img src="../static/images/summary_clean_f1score.png"height="300" width="300" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3> helooo</h3>
+					 </div>
+
+ <div class="card-columns">
+   <img src="../static/images/summary_adv_accuracy.png"height="300" width="300"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <img src="../static/images/summary_adv_f1score.png"height="300" width="300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<h3> oyeee</h3>
+
+  </div>
+ <div class="card-columns">
+					  <img src="../static/images/clean_Global.png"  height="300" width="300">	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 <img src="../static/images/Global_adv.png"height="300" width="300">
+<h3> write here</h3>
+	 <pre id="output"></pre>
+<script>
+    var output = document.getElementById('output');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '{{ url_for('stats') }}');
+    xhr.send();
+
+    setInterval(function() {
+        output.textContent = xhr.responseText;
+    }, 1000);
+</script>
   </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
+
+</html>
